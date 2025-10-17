@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #eee;
+    overflow-x: hidden;
+}
+
+header {
+    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+    padding: 15px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #00d4ff;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 5px #00d4ff, 0 0 10px #00d4ff; }
+    100% { text-shadow: 0 0 20px #00d4ff, 0 0 40px #00d4ff; }
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: #eee;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(120deg, #00d4ff, #1e90ff, #00ffcc);
+    z-index: -1;
+    transition: 0.4s;
+}
+
+nav ul li a:hover::before, nav ul li a.active::before {
+    width: 100%;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: #121212;
+}
+
+.hero {
+    text-align: center;
+    padding: 150px 20px;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #00d4ff;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #00d4ff, #1e90ff, #00ffcc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: slideIn 1s ease-out;
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #00d4ff, #1e90ff, #00ffcc);
+    color: #121212;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 212, 255, 0.6);
+}
+
+.content {
+    padding: 80px 50px;
+    background: linear-gradient(to bottom, #121212, #1e1e1e);
+}
+
+.content h1 {
+    font-size: 2.5em;
+    margin-bottom: 25px;
+    color: #00d4ff;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.content p, .content li {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+form input, form textarea {
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background: #1e1e1e;
+    color: #eee;
+}
+
+form input:focus, form textarea:focus {
+    box-shadow: 0 0 10px #00d4ff;
+}
+
+footer {
+    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+    color: #eee;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    animation: fadeIn 1s ease-in-out;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
